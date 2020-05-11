@@ -23,19 +23,19 @@ router.get("/cart-items/:id", (req, res) => {
 });
 
 router.post("/cart-items/", (req, res) => {
-    console.log(req.body);
-    res.json("Adding item");
+    cartItems.push(req.body);
+    res.json(cartItems);
 });
 
 router.put("/cart-items/:id", (req, res) => {
-    console.log(req.body);
-    console.log(req.params.id);
-    res.json("Update an item");
+    const index = cartItems.indexOf(req.params.id);
+    cartItems.splice(index, 1, req.body);
+    res.json(cartItems);
 });
 
 router.delete("/cart-items/:id", (req, res) => {
-    console.log(req.params.id);
-    res.json("Delete an item");
+    cartItems.splice(index, 1);
+    res.json(cartItems);
 });
 
 module.exports = router;
