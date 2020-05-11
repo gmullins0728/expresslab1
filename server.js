@@ -9,7 +9,7 @@ app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 app.use(cors());
 
-app.use("/", routes);
+app.use("/api", routes);
 
 app.listen(port, () => {
     console.log(`Server is running: ${port}`);

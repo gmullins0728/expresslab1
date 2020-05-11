@@ -7,32 +7,33 @@ router.get("/", (req, res) => {
 });
 
 router.get("/cart-items/", (req, res) => {
-    console.log("*** Query - Server ***", req.query);
     res.json(cartItems);
 });
 
-router.get("/api/cart-items/:id", (req, res) => {
+router.get("/cart-items/:id", (req, res) => {
     let index = req.params.id;
 
     if(cartItems[index]) {
+        res.status(200);
         res.json(cartItems[index]);
     } else {
+        res.status(404);
         res.json("Item not found");
     }
 });
 
-router.post("/api/cart-items/", (req, res) => {
+router.post("/cart-items/", (req, res) => {
     console.log(req.body);
     res.json("Adding item");
 });
 
-router.put("/api/cart-items/:id", (req, res) => {
+router.put("/cart-items/:id", (req, res) => {
     console.log(req.body);
     console.log(req.params.id);
     res.json("Update an item");
 });
 
-router.delete("/api/cart-items/:id", (req, res) => {
+router.delete("/cart-items/:id", (req, res) => {
     console.log(req.params.id);
     res.json("Delete an item");
 });
