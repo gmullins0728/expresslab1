@@ -314,16 +314,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
       _createClass(InventoryService, [{
         key: "getItems",
         value: function getItems() {
-          return this.http.get("http://localhost:3000/cart-items", {
-            responseType: "json"
-          });
-        }
-      }, {
-        key: "addItems",
-        value: function addItems(newItems) {
-          return this.http.post("http://localhost:3000/api/cart-items", {
-            name: newItems
-          }, {
+          return this.http.get("/api/cart-items", {
             responseType: "json"
           });
         }
@@ -390,30 +381,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     var _inventory_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
     /*! ../inventory.service */
     "./src/app/inventory.service.ts");
-    /* harmony import */
-
-
-    var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
-    /*! @angular/common */
-    "./node_modules/@angular/common/__ivy_ngcc__/fesm2015/common.js");
-
-    function ItemsComponent_div_4_Template(rf, ctx) {
-      if (rf & 1) {
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div");
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-      }
-
-      if (rf & 2) {
-        var item_r1 = ctx.$implicit;
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](1);
-
-        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtextInterpolate1"](" ", item_r1 == null ? null : item_r1.product, "\n");
-      }
-    }
 
     var ItemsComponent = /*#__PURE__*/function () {
       function ItemsComponent(inventoryService) {
@@ -446,9 +413,9 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
     ItemsComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
       type: ItemsComponent,
       selectors: [["app-items"]],
-      decls: 5,
-      vars: 1,
-      consts: [[3, "click"], [4, "ngFor", "ngForOf"]],
+      decls: 4,
+      vars: 0,
+      consts: [[3, "click"]],
       template: function ItemsComponent_Template(rf, ctx) {
         if (rf & 1) {
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "p");
@@ -466,17 +433,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, "Get Items");
 
           _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtemplate"](4, ItemsComponent_div_4_Template, 2, 1, "div", 1);
-        }
-
-        if (rf & 2) {
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵadvance"](4);
-
-          _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵproperty"]("ngForOf", ctx.stock);
         }
       },
-      directives: [_angular_common__WEBPACK_IMPORTED_MODULE_2__["NgForOf"]],
       styles: ["\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2l0ZW1zL2l0ZW1zLmNvbXBvbmVudC5jc3MifQ== */"]
     });
     /*@__PURE__*/
